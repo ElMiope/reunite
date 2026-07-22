@@ -9,7 +9,6 @@ import lombok.*;
 @Builder
 @ToString
 @Entity
-@Table(name = "organizadores")
 public class Organizador {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -5,6 +5,7 @@ import lombok.*;
 
 import java.sql.Time;
 import java.util.Date;
+import java.util.Set;
 
 @Getter @Setter
 @AllArgsConstructor
@@ -21,4 +22,11 @@ public class Reunion {
     private Date fecha;
     private Time hora;
     private String ubicacion;
+    @ManyToOne
+    @JoinColumn(name = "organizador_id")
+    private Organizador creador;
+
+    @ManyToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+    @JoinTable(name="invitados_reuniones", joinColumns = @JoinColumn(name="reunion_id"),inverseJoinColumns = @JoinColumn(name="user_id"))
+    private Set<Usuario> invitados;
 }

@@ -1,6 +1,6 @@
 package com.example.reunite.enums;
 
-public enum ROLE {
+public enum Role {
     USUARIO,
     INVITADO,
     ORGANIZADOR
